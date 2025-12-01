@@ -10,17 +10,17 @@ dotenv.config();
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
-const PORT = process.env.PORT ?? 4000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(upload.none());
-
+  
 connectDB();
 
 app.get('/', (_req, res) => {
-  res.json({ app: 'calorie-app backend' });
+  res.json({ app: 'calorie-app backendmekzqza' });
 });
 
 app.use('/', pingRoutes);
